@@ -1,0 +1,10 @@
+{
+  "name": "NodeJS-Express-Simple-Todo-List",
+  "version": "0.1.0",
+  "author": "Housseini Toumani <osin@live.com>",
+  "description": "A simple todo list made with Express JS and Boostrap",
+  "dependencies": {
+    "express": "^4.13.3",
+    "twig": "^0.8.2"
+  }
+}
