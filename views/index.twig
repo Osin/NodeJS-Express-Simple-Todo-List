@@ -40,8 +40,8 @@
         <div class="col-md-6 col-xs-12">
             <div class="widget-area">
                 <div class="status-upload">
-                    <form>
-                        <textarea placeholder="What are you doing right now?"></textarea>
+                    <form method="post" action="add">
+                        <textarea placeholder="What are you doing right now?" name="message"></textarea>
                         <button type="submit" class="btn btn-success green"><i class="fa fa-plus"></i> Add to task list
                         </button>
                     </form>
@@ -49,21 +49,35 @@
             </div><!-- Widget Area -->
         </div>
         <div class="col-md-6 col-xs-12">
-            <div class="list-group">
+            <div class="list-group todos">
                 <a href="#" class="list-group-item disabled">
                     <i class="fa fa-sticky-note"> <strong>All your notes are there</strong></i>
                 </a>
-
-                <div href="#" class="list-group-item">
-                    <div class="row">
-                    <div class="col-xs-1">
-                        <i class="fa fa-square-o"></i>
+                {% for todo in todos %}
+                    <div href="#" class="list-group-item">
+                        <div class="row">
+                            <div class="col-xs-1">
+                                {% if todo.completed %}
+                                    <i class="fa fa-check-square-o"></i>
+                                {% else %}
+                                    <a href="/mark-completed/{{ todo.id }}" alt="set it marked">
+                                        <i class="fa fa-square-o"></i>
+                                    </a>
+                                {% endif %}
+                            </div>
+                            <div class="col-xs-10">
+                                {{ todo.message }}
+                            </div>
+                            <div class="col-xs-1">
+                                <a href="/delete/{{ todo.id }}" alt="delete this todo"> <i class="fa fa-trash-o"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-xs-11">
-                        Dapibus ac facilisis in
+                {% else %}
+                    <div href="#" class="list-group-item">
+                        <em>It's time to write something here ...!</em>
                     </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
