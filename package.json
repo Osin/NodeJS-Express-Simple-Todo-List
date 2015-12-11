@@ -1,5 +1,6 @@
 {
   "name": "NodeJS-Express-Simple-Todo-List",
+  "repository":"git@github.com:Osin/NodeJS-Express-Simple-Todo-List.git",
   "version": "1.0.0",
   "author": "Housseini Toumani <osin@live.com>",
   "description": "A simple todo list made with Express JS and Boostrap",
