@@ -13,7 +13,7 @@ body{ background: #dedede; padding-top: 70px; }
     width: 100%;
     margin-bottom: 20px;
 }
-.status-upload {
+.upload {
     background: none repeat scroll 0 0 #f5f5f5;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -23,11 +23,11 @@ body{ background: #dedede; padding-top: 70px; }
     float: left;
     width: 100%;
 }
-.status-upload form {
+.upload {
     float: left;
     width: 100%;
 }
-.status-upload form textarea {
+.upload textarea {
     background: none repeat scroll 0 0 #fff;
     border: medium none;
     -webkit-border-radius: 4px 4px 0 0;
@@ -48,7 +48,7 @@ body{ background: #dedede; padding-top: 70px; }
     border: 1px solid #F2F2F2;
 }
 
-.status-upload form button {
+.upload button {
     border: medium none;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;

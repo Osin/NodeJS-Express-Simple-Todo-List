@@ -1,13 +1,12 @@
 {
   "name": "NodeJS-Express-Simple-Todo-List",
-  "repository":"git@github.com:Osin/NodeJS-Express-Simple-Todo-List.git",
+  "repository": "git@github.com:Osin/NodeJS-Express-Simple-Todo-List.git",
   "version": "1.0.0",
   "author": "Housseini Toumani <osin@live.com>",
-  "description": "A simple todo list made with Express JS and Boostrap",
+  "description": "A simple todo list made with Express JS and Boostrap using socket.io",
   "dependencies": {
-    "body-parser": "^1.14.1",
-    "cookie-session": "^1.2.0",
     "express": "~4.13.3",
+    "socket.io": "^1.4.4",
     "twig": "~0.8.2"
   }
 }

@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
@@ -30,7 +29,7 @@
     <div class="container">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">NodeJS Express Simple Todo List</a>
+                <a class="navbar-brand" href="/">NodeJS Express Simple Todo List Using Socket.IO</a>
             </div>
         </div>
     </div>
@@ -39,48 +38,26 @@
     <div class="row">
         <div class="col-md-6 col-xs-12">
             <div class="widget-area">
-                <div class="status-upload">
-                    <form method="post" action="add">
-                        <textarea placeholder="What are you doing right now?" name="message"></textarea>
-                        <button type="submit" class="btn btn-success green"><i class="fa fa-plus"></i> Add to task list
+                <div class="upload">
+                        <textarea placeholder="Ecriver votre tache pour commencer" name="message" id="message"></textarea>
+                        <button type="button" id="addTodo" class="btn btn-success green"><i class="fa fa-plus"></i>
+                            Ajouter à la liste
                         </button>
-                    </form>
                 </div><!-- Status Upload  -->
             </div><!-- Widget Area -->
         </div>
         <div class="col-md-6 col-xs-12">
             <div class="list-group todos">
                 <a href="#" class="list-group-item disabled">
-                    <i class="fa fa-sticky-note"> <strong>All your notes are there</strong></i>
+                    <i class="fa fa-sticky-note"> <strong>Toutes vos taches sont ici</strong></i>
                 </a>
-                {% for todo in todos %}
-                    <div href="#" class="list-group-item">
-                        <div class="row">
-                            <div class="col-xs-1">
-                                {% if todo.completed %}
-                                    <i class="fa fa-check-square-o"></i>
-                                {% else %}
-                                    <a href="/mark-completed/{{ todo.id }}" alt="set it marked">
-                                        <i class="fa fa-square-o"></i>
-                                    </a>
-                                {% endif %}
-                            </div>
-                            <div class="col-xs-10">
-                                {{ todo.message }}
-                            </div>
-                            <div class="col-xs-1">
-                                <a href="/delete/{{ todo.id }}" alt="delete this todo"> <i class="fa fa-trash-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                {% else %}
-                    <div href="#" class="list-group-item">
-                        <em>It's time to write something here ...!</em>
-                    </div>
-                {% endfor %}
+                <div id="todoList"></div>
             </div>
         </div>
     </div>
-</div><!-- /.container -->
+</div>
+<script src="socket.io/socket.io.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/static/js/client.js"></script>
 </body>
 </html>
